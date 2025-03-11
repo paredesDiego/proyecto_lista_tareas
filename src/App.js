@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit, faTrash, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "./styles.css";
 
 library.add(faEdit, faTrash, faCheck);
 
@@ -33,19 +33,36 @@ const App = () => {
 
   return (
     <div className="container">
-      <Header setFilter={setFilter} />
+      <Header setFilter={setFilter} filter={filter} />
       <FormularioTareas addTask={addTask} />
       <ListaTareas tasks={tasks} filter={filter} toggleComplete={toggleComplete} editTask={editTask} deleteTask={deleteTask} />
     </div>
   );
 };
 
-const Header = ({ setFilter }) => (
+const Header = ({ setFilter, filter }) => (
   <header>
     <h1>Lista de Tareas</h1>
-    <button onClick={() => setFilter("completed")}>Filtrar Completadas</button>
-    <button onClick={() => setFilter("pending")}>Filtrar Pendientes</button>
-    <button onClick={() => setFilter("all")}>Mostrar Todas</button>
+    <div className="button-container">
+      <button
+        className={filter === "completed" ? "active" : ""}
+        onClick={() => setFilter("completed")}
+      >
+        Filtrar Completadas
+      </button>
+      <button
+        className={filter === "pending" ? "active" : ""}
+        onClick={() => setFilter("pending")}
+      >
+        Filtrar Pendientes
+      </button>
+      <button
+        className={filter === "all" ? "active" : ""}
+        onClick={() => setFilter("all")}
+      >
+        Mostrar Todas
+      </button>
+    </div>
   </header>
 );
 
