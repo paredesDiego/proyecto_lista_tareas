@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ hideCompleted, setHideCompleted }) => {
   return (
@@ -9,7 +11,8 @@ const Header = ({ hideCompleted, setHideCompleted }) => {
           className={hideCompleted ? "active" : ""} 
           onClick={() => setHideCompleted(!hideCompleted)}
         >
-          {hideCompleted ? "Mostrar Completadas" : "No mostrar Completadas"}
+          <FontAwesomeIcon icon={hideCompleted ? faEye : faEyeSlash} />  
+          {hideCompleted ? " Mostrar Completadas" : " No mostrar Completadas"}
         </button>
       </div>
     </header>
