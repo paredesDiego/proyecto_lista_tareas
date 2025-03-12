@@ -1,168 +1,100 @@
-/* Estilos generales para el cuerpo de la página */
+/* styles.css */
 body {
-  font-family: Arial, sans-serif; /* Fuente principal */
-  background-color: #ccc; /* Color de fondo */
-  display: flex; /* Alineación en el centro de la pantalla */
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Altura del 100% de la ventana */
-  margin: 0;
-  overflow: hidden; /* Evita que el contenido se desborde */
-}
-
-/* Contenedor principal de la aplicación */
-.container {
-  background: white; /* Fondo blanco */
-  padding: 20px; /* Espaciado interno */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  max-width: 100%; /* Evita que el contenido se desborde en pantallas pequeñas */
-  overflow: hidden; /* Previene el desbordamiento interno */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-}
-
-/* Estilos del encabezado */
-header {
-  display: flex;
-  flex-direction: column; /* Acomoda los elementos en columna */
-  align-items: center; /* Centra los elementos */
-  margin-bottom: 20px;
-  width: 100%; /* Asegura que no se desborde */
-  box-sizing: border-box;
-  background-color: #007bff;
-  border-radius: 5px;
-}
-
-h1 {
-  margin-bottom: 10px; /* Espaciado inferior */
-  text-align: center;
-  color: white;
-}
-
-/* Estilos de los botones */
-.button-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Evita el desbordamiento al permitir múltiples líneas */
-}
-
-button {
-  padding: 8px 12px; /* Espaciado interno */
-  border: none; /* Sin bordes */
-  cursor: pointer; /* Cambia el cursor a puntero */
-  background-color: #007bff; /* Azul principal */
-  color: white; /* Texto en color blanco */
-  transition: background 0.3s; /* Transición suave */
-  max-width: 100%; /* Evita que los botones se desborden */
-}
-
-button:hover {
-  background-color: #0056b3; /* Oscurece el azul al pasar el mouse */
-  border-top-left-radius: 4px; /* Bordes redondeados */
-  border-top-right-radius: 4px; /* Bordes redondeados */
-}
-
-button.active {
-  background-color: #0056b3; /* Verde para el filtro activo */
-  border-top-left-radius: 4px; /* Bordes redondeados */
-  border-top-right-radius: 4px; /* Bordes redondeados */
-
-}
-
-/* Botón para mostrar tareas completadas con icono de ojo */
-.show-completed {
-  display: flex;
-  align-items: center;
-  gap: 5px; /* Espaciado entre el icono y el texto */
-}
-
-.show-completed .fa-eye {
-  font-size: 18px;
-}
-
-/* Estilos del formulario para agregar tareas */
-form {
-  display: flex;
-  gap: 10px; /* Espaciado entre los elementos del formulario */
-  flex-wrap: wrap; /* Evita el desbordamiento */
-}
-
-input {
-  flex: 1; /* Hace que el input ocupe todo el espacio disponible */
-  padding: 8px;
-  border: 1px solid #ccc; /* Borde gris */
-  border-radius: 4px; /* Bordes redondeados */
-  max-width: 100%; /* Evita el desbordamiento */
-  box-sizing: border-box;
-}
-
-/* Lista de tareas */
-ul {
-  list-style: none; /* Elimina los puntos de la lista */
-  padding: 0;
-}
-
-li {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
-  background: white;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 4px; /* Bordes redondeados */
-  max-width: 100%; /* Evita el desbordamiento */
-  box-sizing: border-box;
-}
-
-/* Estilos para tareas completadas */
-li.completed {
-  text-decoration: line-through; /* Tachado en el texto */
-  color: gray; /* Cambia el color a gris */
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-/* Estilos de los botones dentro de las tareas */
-li .task-buttons {
-  display: flex;
-  gap: 5px;
-}
-
-li button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none; /* Sin fondo */
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #333; /* Color oscuro predeterminado */
-}
-
-/* Cambia el color del botón al pasar el mouse (eliminar) */
-li button:hover {
-  color: red;
-}
-
-li button:hover .fa {
-  transform: scale(1.1); /* Agranda el icono al pasar el ratón */
-  transition: transform 0.2s ease-in-out;
-}
-
-/* Cambia el color del botón al pasar el mouse (completar) */
-li button:first-child:hover {
-  color: green;
-}
-
-@media (max-width: 600px) {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
   .container {
-    width: 100%; /* La caja ocupará todo el ancho en pantallas pequeñas */
+    width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header {
+    background-color: #007bff;
+    color: white;
     padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-
-  .button-container {
-    flex-direction: column; /* Los botones se apilan verticalmente */
+  
+  .button-container button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
   }
-
-  input {
-    width: 100%; /* El campo de entrada tomará todo el ancho disponible */
+  
+  .button-container button.active {
+    background-color: #004494;
   }
-}
+  
+  form {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  li.completed span {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  button .fa-edit {
+    color: #007bff;
+  }
+  
+  button .fa-trash {
+    color: red;
+  }
+  
+  button .fa-check {
+    color: green;
+  }
+  
