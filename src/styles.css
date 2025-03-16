@@ -149,3 +149,10 @@ button.update-btn {
   margin-left: 5px;
   cursor: pointer;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-align: center;
+}
